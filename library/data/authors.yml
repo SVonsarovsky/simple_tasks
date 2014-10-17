@@ -1,0 +1,4 @@
+---
+- !ruby/object:Author
+  name: Nick Hornby
+  biography: ''

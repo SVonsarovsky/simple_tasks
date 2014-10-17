@@ -1,0 +1,6 @@
+---
+- !ruby/object:Book
+  title: About A Boy
+  author: !ruby/object:Author
+    name: Nick Hornby
+    biography: ''

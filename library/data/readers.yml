@@ -1,0 +1,7 @@
+---
+- !ruby/object:Reader
+  name: Sergey V.
+  email: s_vonsarov@mail.ru
+  city: ''
+  street: ''
+  house: ''

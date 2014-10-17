@@ -1,0 +1,14 @@
+---
+- !ruby/object:Order
+  book: !ruby/object:Book
+    title: About A Boy
+    author: !ruby/object:Author
+      name: Nick Hornby
+      biography: ''
+  reader: !ruby/object:Reader
+    name: Sergey V.
+    email: s_vonsarov@mail.ru
+    city: ''
+    street: ''
+    house: ''
+  date: 2014-10-17 10:57:13.808380113 +03:00
