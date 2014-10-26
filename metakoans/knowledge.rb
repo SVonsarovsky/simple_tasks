@@ -25,7 +25,7 @@ class Module
       #You can use __send__ if the name send clashes with an existing method in obj.
       #This method is deprecated
       #__send__(attr)
-      send(attr)
+      !!send(attr) # double !! because we need boolean result
     end
   end
 end
