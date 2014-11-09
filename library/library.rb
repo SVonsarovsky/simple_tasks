@@ -57,15 +57,11 @@ class Library
     readers.length <= 0 ? nil : readers.uniq.map{|reader| [readers.count(reader), reader]}.sort_by{|k, v| -k}[fan_in_order][1]
   end
 
-  def get_file_fot_attr(attr)
-    File.expand_path(File.dirname(__FILE__))+'/data/'+attr.to_s[1..-1]+'.yml'
-  end
-
   # Save all Library data to file(s)
   def save_data
     #File.open('./data/orders.yml', 'w') {|f| f.write @orders.to_yaml }
     for attr in instance_variables
-      f = File.open(get_file_fot_attr(attr), 'w')
+      f = File.open(get_file_for_attr(attr), 'w')
       f.write instance_variable_get(:"#{attr}").to_yaml
       f.close
     end
@@ -75,8 +71,13 @@ class Library
   def get_data
     #@orders = YAML.load_file('./data/orders.yml')
     for attr in instance_variables
-      v = YAML::load_file(get_file_fot_attr(attr))
+      v = YAML::load_file(get_file_for_attr(attr))
       instance_variable_set :"#{attr}", v
     end
   end
+
+  private
+    def get_file_for_attr(attr)
+      File.expand_path(File.dirname(__FILE__))+'/data/'+attr.to_s[1..-1]+'.yml'
+    end
 end
